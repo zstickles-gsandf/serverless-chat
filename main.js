@@ -10,11 +10,22 @@ var config = {
 firebase.initializeApp(config);
 
 const db = firebase.database().ref('posts');
+const auth = firebase.auth();
+const authProvider = new firebase.auth.GoogleAuthProvider();
 
-const $username = document.getElementById('username');
 const $message = document.getElementById('message');
 const $send = document.getElementById('send');
+const $login = document.getElementById('login');
 const $chat = document.getElementById('chat');
+
+let username = '';
+
+$send.style.display = 'none';
+$message.style.display = 'none';
+
+$login.addEventListener('click', () => {
+  auth.signInWithPopup(authProvider);
+});
 
 $send.addEventListener('click', () => {
   const username = $username.value;
