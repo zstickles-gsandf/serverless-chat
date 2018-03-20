@@ -1,6 +1,6 @@
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyCJgPTrSKwWhZyD5nCZi8OGxPxvkZKHzYk",
+  apiKey: "YOUR_API_KEY_HERE",
   authDomain: "serverless-chat-1130d.firebaseapp.com",
   databaseURL: "https://serverless-chat-1130d.firebaseio.com",
   projectId: "serverless-chat-1130d",
