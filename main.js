@@ -28,7 +28,6 @@ $login.addEventListener('click', () => {
 });
 
 $send.addEventListener('click', () => {
-  const username = $username.value;
   const message = $message.value;
   db.push({ username, message });
   $message.value = '';
@@ -44,4 +43,14 @@ db.on('child_added', (snapshot) => {
   $entry.appendChild($name);
   $entry.appendChild($text);
   $chat.appendChild($entry);
+});
+
+// when the user logs in
+auth.onAuthStateChanged(data => {
+  if (data) {
+    username = data.displayName;
+    $send.style.display = 'block';
+    $message.style.display = 'block';
+    $login.style.display = 'none';
+  }
 });
